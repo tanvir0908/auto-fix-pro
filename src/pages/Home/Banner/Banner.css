@@ -1,0 +1,36 @@
+.banner1 {
+  background-image: url("../../../assets/images/banner/1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner2 {
+  background-image: url("../../../assets/images/banner/2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner3 {
+  background-image: url("../../../assets/images/banner/3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner4 {
+  background-image: url("../../../assets/images/banner/4.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner5 {
+  background-image: url("../../../assets/images/banner/5.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner6 {
+  background-image: url("../../../assets/images/banner/6.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

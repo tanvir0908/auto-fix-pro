@@ -13,7 +13,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="xl:px-32 lg:px-20 md:px-16 px-5 my-5 items-center flex justify-between">
+    <div className="xl:px-32 lg:px-20 md:px-12 px-5 my-7 items-center flex justify-between">
       <div className="text-primary flex items-center gap-2 font-secondary">
         <BsFillCarFrontFill className="text-[2rem] xl:text-[3rem]" />
         <p className="text-2xl xl:text-3xl font-semibold">AutoFix Pro</p>
@@ -57,7 +57,7 @@ export default function Navbar() {
           />
         </svg>
         <Link className="hidden lg:block">
-          <button className="border-2  px-3 py-2 text-primary hover:shadow-md hover:bg-primary transition hover:text-white  xl:text-lg font-semibold rounded-lg border-primary">
+          <button className="border-2  px-3 py-3 text-primary hover:shadow-md hover:bg-primary transition hover:text-white  xl:text-lg font-semibold rounded-lg border-primary">
             Appointment
           </button>
         </Link>
@@ -70,7 +70,7 @@ export default function Navbar() {
         </div>
       </div>
       {isOpen && (
-        <div className="absolute mt-3 top-12 right-5 md:right-16  w-[50%] md:w-[30%] shadow-xl rounded-lg  z-10 bg-neutral-200">
+        <div className="absolute mt-5 top-12 right-5 md:right-12  w-[50%] md:w-[35%] shadow-xl rounded-lg  z-10 bg-neutral-200">
           <div className="flex flex-col">
             <NavLink
               className={
@@ -85,7 +85,7 @@ export default function Navbar() {
             <NavLink className={"px-6 py-4 font-medium"}>Contact</NavLink>
           </div>
           <div className="mx-6 pb-6 pt-1 rounded-b-lg">
-            <button className="border-2 w-full text-center px-3 py-2 text-primary hover:shadow-md hover:bg-primary transition hover:text-white font-semibold rounded-lg border-primary">
+            <button className="border-2 w-full text-center px-3 py-3 text-primary hover:shadow-md hover:bg-primary transition hover:text-white font-semibold rounded-lg border-primary">
               Appointment
             </button>
           </div>
