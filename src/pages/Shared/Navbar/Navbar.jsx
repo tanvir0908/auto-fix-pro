@@ -1,12 +1,20 @@
 /* eslint-disable react/no-unknown-property */
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { BsFillCarFrontFill } from "react-icons/bs";
 import { IoClose } from "react-icons/io5";
 import { HiMenu } from "react-icons/hi";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
 
   const handleOpen = () => {
     setIsOpen(!isOpen);
@@ -24,6 +32,15 @@ export default function Navbar() {
         <NavLink>Services</NavLink>
         <NavLink className={"mx-5 xl:mx-16"}>Blog</NavLink>
         <NavLink>Contact</NavLink>
+        {user?.email ? (
+          <button onClick={handleLogOut} className={"ml-5 xl:ml-16"}>
+            SignOut
+          </button>
+        ) : (
+          <NavLink className={"ml-5 xl:ml-16"} to={"/login"}>
+            Login
+          </NavLink>
+        )}
       </div>
       <div className="flex gap-5 items-center relative">
         <svg
