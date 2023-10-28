@@ -2,8 +2,12 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-export default function BookinsRow({ booking, handleDelete }) {
-  const { _id, name, email, date, price, service } = booking;
+export default function BookinsRow({
+  booking,
+  handleDelete,
+  handleBookingConfirm,
+}) {
+  const { _id, name, email, date, price, service, status } = booking;
 
   return (
     <div>
@@ -36,7 +40,16 @@ export default function BookinsRow({ booking, handleDelete }) {
         <td>{date}</td>
         <td>${price}</td>
         <th>
-          <button className="btn btn-ghost btn-xs">details</button>
+          {status === "confirm" ? (
+            <span className="text-primary">Approved</span>
+          ) : (
+            <button
+              onClick={() => handleBookingConfirm(_id)}
+              className="btn btn-ghost btn-xs"
+            >
+              Confirm
+            </button>
+          )}
         </th>
       </tr>
     </div>

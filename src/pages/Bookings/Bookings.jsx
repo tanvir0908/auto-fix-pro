@@ -41,11 +41,33 @@ export default function Bookings() {
     });
   };
 
+  const handleBookingConfirm = (id) => {
+    fetch(`http://localhost:5000/bookings/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ status: "confirm" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          Swal.fire("Good job!", "You confirmed the service!", "success");
+
+          const remaining = bookings.filter((booking) => booking._id !== id);
+          const updated = bookings.find((booking) => booking._id === id);
+          updated.status = "confirm";
+          const newBookings = [updated, ...remaining];
+          setBookings(newBookings);
+        }
+      });
+  };
+
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setBookings(data));
-  }, []);
+  }, [url]);
   return (
     <div>
       <h1>Your Bookings: {bookings.length}</h1>
@@ -67,6 +89,7 @@ export default function Bookings() {
                 key={booking._id}
                 booking={booking}
                 handleDelete={handleDelete}
+                handleBookingConfirm={handleBookingConfirm}
               />
             ))}
           </tbody>
