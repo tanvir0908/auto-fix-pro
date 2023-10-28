@@ -31,7 +31,7 @@ export default function Navbar() {
         <NavLink className={"mx-5 xl:mx-16"}>About</NavLink>
         <NavLink>Services</NavLink>
         <NavLink className={"mx-5 xl:mx-16"}>Blog</NavLink>
-        <NavLink>Contact</NavLink>
+        <NavLink to={"/bookings"}>Bookings</NavLink>
         {user?.email ? (
           <button onClick={handleLogOut} className={"ml-5 xl:ml-16"}>
             SignOut
